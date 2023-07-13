@@ -67,7 +67,7 @@ NUMBER_IMAGE_MAX, 1, 60, 120, NumberImage);
 	else
 	{
 		GameLevel++;           //ゲームレベルの更新
-		Set_StageMIssion(3); //ミッションを増やす
+		Set_StageMission(3); //ミッションを増やす
 	}
 	GameTime = TIMELIMIT;  //制限時間の初期化
 
@@ -120,3 +120,18 @@ void GameMainScene_Update(void)
 * 引　数：なし
 * 戻り値：なし
 ************************************/
+void GameMainScene_Draw(void)
+{
+	int PosX = 600;
+	int tmp_level = GameLevel;
+	int tmp_score = Get_StageScore();
+
+	//ステージを描画
+	StageDraw();
+
+	//フェードアウト状態か？
+	if (Get_StageState()==1)
+	{
+		FadeOutBlock();     //フェードアウトする
+	}
+}
