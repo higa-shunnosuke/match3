@@ -26,4 +26,4 @@ int SceneManager_Initialize(GAME_MODE mode);   //‰Šú‰»ˆ—
 void SceneManager_Update(void);                //XVˆ—
 void SceneManager_Draw(void);                  //•`‰æˆ—
 
-void Change_Sxene(GAME_MODE mode);
+void Change_Scene(GAME_MODE mode);
