@@ -62,7 +62,10 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,_I
 		return D_ERROR;
 	}
 
-	//b法が先画面を裏にする
+	//描画先画面を裏にする
+	SetDrawScreen(DX_SCREEN_BACK);
+
+	//文字サイズを設定
 	SetFontSize(FONT_SIZE);
 
 	//ゲームループ
