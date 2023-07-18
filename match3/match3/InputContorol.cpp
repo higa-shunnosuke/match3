@@ -103,14 +103,38 @@ int GetNowKey(int key)
 * 引　数：指定するマウスのボタン
 * 戻り値：TRUE（入力された）、FALSE（未入力）
 ************************************/
-int GetOldKey(int key)
+int GetKeyFlg(int key)
 {
 	int ret = FALSE;
 
-	if ((key & old_button) != FALSE)
+	int keyflg = now_button & ~old_button;
+
+	if ((key & keyflg) != FALSE)
 	{
 		ret = TRUE;
 	}
 
 	return ret;
+}
+
+/***********************************
+* 入力制御機能マウス座標取得処理
+* 引　数：なし
+* 戻り値：マウスカーソルのX座標情報
+************************************/
+
+int GetMousePositionX(void)
+{
+	return mouse_position_x;
+}
+
+/***********************************
+* 入力制御機能マウス座標取得処理
+* 引　数：なし
+* 戻り値：マウスカーソルのY座標情報
+************************************/
+
+int GetMousePositionY(void)
+{
+	return mouse_position_y;
 }
