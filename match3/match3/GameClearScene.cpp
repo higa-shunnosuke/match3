@@ -26,7 +26,7 @@ int GameClearFlag;
 * 引　数：なし
 * 戻り値：エラー情報
 ************************************/
-int GameCoearScene_Initialize(void)
+int GameClearScene_Initialize(void)
 {
 	int ret = 0;
 
@@ -38,13 +38,13 @@ int GameCoearScene_Initialize(void)
 	GameClearFlag = 0;
 
 	//エラーチェック
-	if (GameClearImage == -1)
+	if (GameClearImage == D_ERROR)
 	{
-		ret = -1;
+		ret = D_ERROR;
 	}
-	if (GameClearSE==-1)
+	if (GameClearSE==D_ERROR)
 	{
-		ret = -1;
+		ret = D_ERROR;
 	}
 
 	return ret;

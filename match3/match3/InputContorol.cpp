@@ -1,7 +1,5 @@
 #include"DxLib.h"
-#include"FreamControl.h"
 #include"InputContorol.h"
-#include"SceneManager.h"
 
 /***********************************
 * •Ï”éŒ¾
