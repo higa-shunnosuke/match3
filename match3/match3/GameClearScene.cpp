@@ -55,7 +55,7 @@ int GameClearScene_Initialize(void)
 * 引　数：なし
 * 戻り値：なし
 ************************************/
-void ameClearScene_Update(void)
+void GameClearScene_Update(void)
 {
 	//ゲームクリア効果音再生チェック
 	if (CheckSoundMem(GameClearSE)==0)

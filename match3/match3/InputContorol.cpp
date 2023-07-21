@@ -33,7 +33,7 @@ void Input_Initialize(void)
 * 戻り値：なし
 ************************************/
 
-void Inpyt_Update(void)
+void Input_Update(void)
 {
 	//マウス入力情報の取得
 	old_button = now_button;

@@ -30,7 +30,7 @@ int LastTime;
 * 引　数：なし
 * 戻り値：なし
 ************************************/
-void freamControl_Update(void)
+void FreamControl_Initialize(void)
 {
 	FreamTime = ((int)10000.0f / FREAM_RATE);
 	NowTime = 0;

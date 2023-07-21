@@ -36,7 +36,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,_I
 	//ウィンドウタイトルで起動
 	SetMainWindowText("Match 3 Puzzle");
 
-	//ウィンドウモードで起動
+	//ウィンドモードで起動
 	ChangeWindowMode(TRUE);
 
 	//画面サイズの最大サイズ、カラービット数を設定
