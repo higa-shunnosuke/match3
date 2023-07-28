@@ -165,12 +165,12 @@ void StageDraw(void)
 	}
 
 	//選択ブロックを描画
-	DrawGraph(Select[SELECT_CURSOR].x * BLOCKSIZE, Select[SELECT_CURSOR].y *
-		BLOCKSIZE, BlockImage[9], TRUE);
+	DrawGraph(Select[SELECT_CURSOR].x * BLOCKSIZE,
+		Select[SELECT_CURSOR].y *BLOCKSIZE, BlockImage[9], TRUE);
 	if (ClickStatus!=E_NONE)
 	{
-		DrawGraph(Select[NEXT_CURSOR].x * BLOCKSIZE, Select[NEXT_CURSOR].y *
-			BLOCKSIZE, BlockImage[9], TRUE);
+		DrawGraph(Select[NEXT_CURSOR].x * BLOCKSIZE,
+			Select[NEXT_CURSOR].y *BLOCKSIZE, BlockImage[9], TRUE);
 	}
 
 	//ミッションを描画
@@ -266,7 +266,7 @@ void SelectBlock(void)
 		{
 			Select[SELECT_CURSOR].x = 0;
 		}
-		if (Select[SELECT_CURSOR].x < WIDTH-3)
+		if (Select[SELECT_CURSOR].x > WIDTH-3)
 		{
 			Select[SELECT_CURSOR].x = WIDTH-3;
 		}
@@ -274,7 +274,7 @@ void SelectBlock(void)
 		{
 			Select[SELECT_CURSOR].y = 0;
 		}
-		if (Select[SELECT_CURSOR].y < WIDTH - 3)
+		if (Select[SELECT_CURSOR].y > WIDTH - 3)
 		{
 			Select[SELECT_CURSOR].y = WIDTH - 3;
 		}

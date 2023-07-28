@@ -30,8 +30,8 @@
 /***********************************
 * プログラムの開始
 ************************************/
-int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,_In_
-	LPSTR lpCmdLine, _In_ int nShowCmd)
+int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
+	_In_ LPSTR lpCmdLine, _In_ int nShowCmd)
 {
 	//ウィンドウタイトルで起動
 	SetMainWindowText("Match 3 Puzzle");
@@ -57,7 +57,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,_I
 	//シーンマネージャー初期化処理
 	
 	//エラーが発生したら、終了する
-	if (DxLib_Init() == D_ERROR)
+	if (SceneManager_Initialize(E_TITLE) == D_ERROR)
 	{
 		return D_ERROR;
 	}
@@ -69,7 +69,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,_I
 	SetFontSize(FONT_SIZE);
 
 	//ゲームループ
-	while (ProcessMessage()!=ERROR&&Input_Escape()==FALSE)
+	while (ProcessMessage()!= D_ERROR&&Input_Escape()==FALSE)
 	{
 		//入力制御機能更新処理
 		Input_Update();
@@ -91,7 +91,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,_I
 	}
 
 	//Dxライブラリ使用の終了処理
-	DxLib_End();
+	DxLib_End()	;
 
 	return 0;
 }
