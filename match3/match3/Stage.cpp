@@ -148,7 +148,7 @@ void StageDraw(void)
 	for (int i = 0; i < ITEM_MAX; i++)
 	{
 		DrawRotaGraph(540, 245 + i * 30, 0.5f, 0, BlockImage[i + 1], TRUE, 0);
-		DrawFormatString(580, 235 + i * 30, 0xffffff, "%d", Item[i]);
+		DrawFormatString(580, 235 + i * 30, 0xffffff, "%3d", Item[i]);
 	}
 
 	//ブロックを描画
@@ -633,6 +633,7 @@ void combo_check_w(int y, int x, int* cnt, int* col)
 	{
 		return;
 	}
+
 	*col = Block[y][x].image;
 	Color = Block[y][x].image;   //色取得
 	Block[y][x].image = 0;
@@ -640,11 +641,11 @@ void combo_check_w(int y, int x, int* cnt, int* col)
 
 	if (Block[y][x+1].image == Color)
 	{
-		combo_check_h(y, x+1, cnt, col);
+		combo_check_w(y, x+1, cnt, col);
 	}
 	if (Block[y][x-1].image == Color)
 	{
-		combo_check_h(y, x-1, cnt, col);
+		combo_check_w(y, x-1, cnt, col);
 	}
 }
 

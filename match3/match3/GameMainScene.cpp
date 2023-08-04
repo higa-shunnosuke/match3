@@ -154,5 +154,5 @@ void GameMainScene_Draw(void)
 	} while (tmp_score > 0);
 
 	//êßå¿éûä‘ÇÃï`âÊ
-	DrawBox(491, 469, 509, 469 - GameTime / 60 * 2, 0x0033ff, TRUE);
+	DrawBox(491, 469, 509, 439 - GameTime / 60 * 2, 0x0033ff, TRUE);
 }
