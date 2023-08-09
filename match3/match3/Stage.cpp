@@ -176,14 +176,6 @@ void StageDraw(void)
 	//ミッションを描画
 	SetFontSize(20);
 	DrawFormatString(590,211, GetColor(255, 255, 255), "%3d", Stage_Mission);
-
-	//アイテムの取得個数を描画
-	for (int i = 0; i < ITEM_MAX; i++)
-	{
-		DrawRotaGraph(540, 245 + i * 30, 0.5f, 0, BlockImage[i + 1], TRUE, 0);
-		DrawFormatString(580, 235 + i * 30, GetColor(255, 255, 255), "%3d",
-			Item[i]);
-	}
 }
 
 /***********************************
@@ -328,11 +320,11 @@ void SelectBlock(void)
 			if (Result == 0)
 			{
 				int TmpBlock = Block[Select[NEXT_CURSOR].y +
-					1][Select[NEXT_CURSOR].x + 1].image;
+			 1][Select[NEXT_CURSOR].x + 1].image;
 				Block[Select[NEXT_CURSOR].y + 1][Select[NEXT_CURSOR].x +
-					1].image = Block[Select[TMP_CURSOR].y + 1][Select[NEXT_CURSOR].x + 1].image;
+			 1].image = Block[Select[TMP_CURSOR].y + 1][Select[TMP_CURSOR].x + 1].image;
 				Block[Select[TMP_CURSOR].y + 1][Select[TMP_CURSOR].x +
-					1].image = TmpBlock;
+			 1].image = TmpBlock;
 			}
 			else
 			{

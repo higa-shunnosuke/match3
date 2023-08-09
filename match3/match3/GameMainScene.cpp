@@ -21,7 +21,7 @@ int GameLevel;
 int GameMission;
 int GameTime;
 int GameCount;   //初期化されないようにするためのカウント
-int ReStartFkagl;
+int ReStartFlag;
 
 int NumberImage[NUMBER_IMAGE_MAX];   //数字用画像
 
@@ -42,7 +42,7 @@ int GameMainScene_Initialize(void)
 
 	//画像の読込み
 	LoadDivGraph("images/number.png", NUMBER_IMAGE_MAX,
-NUMBER_IMAGE_MAX, 1, 60, 120, NumberImage);
+ NUMBER_IMAGE_MAX, 1, 60, 120, NumberImage);
 
 	//ステージ機能初期化
 	ret = StageInitialize();
@@ -154,5 +154,5 @@ void GameMainScene_Draw(void)
 	} while (tmp_score > 0);
 
 	//制限時間の描画
-	DrawBox(491, 469, 509, 439 - GameTime / 60 * 2, 0x0033ff, TRUE);
+	DrawBox(491, 469, 509, 469 - GameTime / 60 * 2, 0x0033ff, TRUE);
 }

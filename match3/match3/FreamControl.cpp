@@ -32,7 +32,7 @@ int LastTime;
 ************************************/
 void FreamControl_Initialize(void)
 {
-	FreamTime = ((int)10000.0f / FREAM_RATE);
+	FreamTime = ((int)1000.0f / FREAM_RATE);
 	NowTime = 0;
 	Wait = 0;
 	LastTime = 0;
