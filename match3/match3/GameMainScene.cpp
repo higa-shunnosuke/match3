@@ -42,7 +42,7 @@ int GameMainScene_Initialize(void)
 
 	//画像の読込み
 	LoadDivGraph("images/number.png", NUMBER_IMAGE_MAX,
- NUMBER_IMAGE_MAX, 1, 60, 120, NumberImage);
+		NUMBER_IMAGE_MAX, 1, 60, 120, NumberImage);
 
 	//ステージ機能初期化
 	ret = StageInitialize();
@@ -65,10 +65,15 @@ int GameMainScene_Initialize(void)
 		Set_StageMission(3);  //ミッションの初期化
 		GameCount++;              //次回の設定
 	}
+	else if (GameCount%2==1)
+	{
+		GameCount++;              //次回の設定
+	}
 	else
 	{
 		GameLevel++;           //ゲームレベルの更新
 		Set_StageMission(3); //ミッションを増やす
+		GameCount++;              //次回の設定
 	}
 	GameTime = TIMELIMIT;  //制限時間の初期化
 

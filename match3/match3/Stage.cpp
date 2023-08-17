@@ -319,12 +319,12 @@ void SelectBlock(void)
 			//連鎖が３未満なら選択ブロックをもとに戻す
 			if (Result == 0)
 			{
-				int TmpBlock = Block[Select[NEXT_CURSOR].y +
+			/*	int TmpBlock = Block[Select[NEXT_CURSOR].y +
 			 1][Select[NEXT_CURSOR].x + 1].image;
 				Block[Select[NEXT_CURSOR].y + 1][Select[NEXT_CURSOR].x +
 			 1].image = Block[Select[TMP_CURSOR].y + 1][Select[TMP_CURSOR].x + 1].image;
 				Block[Select[TMP_CURSOR].y + 1][Select[TMP_CURSOR].x +
-			 1].image = TmpBlock;
+			 1].image = TmpBlock;*/
 			}
 			else
 			{
@@ -472,14 +472,46 @@ void CheckBlock(void)
 void CheckClear(void)
 {
 	int i;
+	int ItemCount=0;
 
 	for ( i = 0; i < ITEM_MAX; i++)
 	{
 		if (Item[i]>=Stage_Mission)
 		{
-			ClearFlag = TRUE; 
-			break;
+			switch (i)
+			{
+			case 0:
+				ItemCount++;
+				break;
+			case 1:
+				ItemCount++;
+				break;
+			case 2:
+				ItemCount++;
+				break;
+			case 3:
+				ItemCount++;
+				break;
+			case 4:
+				ItemCount++;
+				break;
+			case 5:
+				ItemCount++;
+				break;
+			case 6:
+				ItemCount++;
+				break;
+			case 7:
+				ItemCount++;
+				break;
+			default:
+				break;
+			}
 		}
+	}
+	if (ItemCount==8)
+	{
+		ClearFlag = TRUE;
 	}
 	if (ClearFlag!=TRUE)
 	{
@@ -606,6 +638,14 @@ void combo_check_h(int y, int x, int* cnt, int* col)
 		combo_check_h(y + 1, x, cnt, col);
 	}
 	if (Block[y-1][x].image==Color)
+	{
+		combo_check_h(y - 1, x, cnt, col);
+	}
+	if (Block[y][x+1].image==Color)
+	{
+		combo_check_h(y + 1, x, cnt, col);
+	}
+	if (Block[y][x-1].image==Color)
 	{
 		combo_check_h(y - 1, x, cnt, col);
 	}
