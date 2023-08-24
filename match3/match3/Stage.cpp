@@ -319,12 +319,12 @@ void SelectBlock(void)
 			//連鎖が３未満なら選択ブロックをもとに戻す
 			if (Result == 0)
 			{
-			/*	int TmpBlock = Block[Select[NEXT_CURSOR].y +
+				int TmpBlock = Block[Select[NEXT_CURSOR].y +
 			 1][Select[NEXT_CURSOR].x + 1].image;
 				Block[Select[NEXT_CURSOR].y + 1][Select[NEXT_CURSOR].x +
 			 1].image = Block[Select[TMP_CURSOR].y + 1][Select[TMP_CURSOR].x + 1].image;
 				Block[Select[TMP_CURSOR].y + 1][Select[TMP_CURSOR].x +
-			 1].image = TmpBlock;*/
+			 1].image = TmpBlock;
 			}
 			else
 			{
@@ -585,7 +585,10 @@ int combo_check(int y,int x)
 	{
 		restore_block();        //3個未満なら戻す
 	}
+	if (CountH >= 3)
+	{
 
+	}
 	//横方向のチェック
 	int CountW = 0;
 	int ColorW = 0;
@@ -641,14 +644,15 @@ void combo_check_h(int y, int x, int* cnt, int* col)
 	{
 		combo_check_h(y - 1, x, cnt, col);
 	}
-	if (Block[y][x+1].image==Color)
+	if (Block[y][x + 1].image == Color)
 	{
-		combo_check_h(y + 1, x, cnt, col);
+		combo_check_h(y, x + 1, cnt, col);
 	}
-	if (Block[y][x-1].image==Color)
+	if (Block[y][x - 1].image == Color)
 	{
-		combo_check_h(y - 1, x, cnt, col);
+		combo_check_h(y, x - 1, cnt, col);
 	}
+	
 }
 
 /***********************************
@@ -678,6 +682,14 @@ void combo_check_w(int y, int x, int* cnt, int* col)
 	if (Block[y][x-1].image == Color)
 	{
 		combo_check_w(y, x-1, cnt, col);
+	}
+	if (Block[y + 1][x].image == Color)
+	{
+		combo_check_w(y + 1, x, cnt, col);
+	}
+	if (Block[y - 1][x].image == Color)
+	{
+		combo_check_w(y - 1, x, cnt, col);
 	}
 }
 
